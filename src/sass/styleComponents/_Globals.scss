@@ -1,0 +1,63 @@
+// == PALETA == //
+$background-primary : #F9FBFC;
+$primary-red: #FF3355;
+$secondary-red : #D70025;
+$line-header : #E1E6F0;
+$line-sidebar : #BDBDBD;
+$line-main : #7D7D7D;
+$line-table :#DCDCDC;
+$primary-blue : #0F3041;
+$border-blue :#466EFE;
+$blueLight-card : #C2DAFF;
+$orange-card : #FFE7B3;
+$orangeLight-card : #FFDFC2;
+$skyblue-card : #C1F0CB;
+$skyblueLight-card : #C2FFFB;
+$pink-card : #FFC2CC;
+$pinkLight-card : #FFC2C2;
+$pinkL-card : #FFC2F2;
+$lila-card : #BFBEFF;
+$grayLight : #838795;
+$white : #ffffff;
+$txtRed : #FF4766;
+$txtBlueLight :#969CBA;
+$txtGray :#7D7577;
+$txtForm : #0E3141;
+$txtPlaceholder :#BDBDBD;
+$txtgreen: #31CC53;
+$borderInputForm:#EEF0F6;
+$txtPlaceholderGray : #B6B2B2; 
+$background-light: #F0F3F5;
+$height-card-materia : 37px;
+$margin-card-materia : 0 0 8px;
+$padding-card-materia : 10px;
+$border-radius-card : 10px;
+  
+  
+// == GLOBALES == //
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
+body {
+  font-family: Raleway;
+}
+
+ul {
+  list-style: none;
+}
+  
+// a {
+//   text-decoration: none;
+// }
+
+p {
+  margin-bottom: 0;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0px 25px white inset;
+}
+

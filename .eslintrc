@@ -6,6 +6,7 @@
       "react/button-has-type": ["off",{"button": true}],
       "react/destructuring-assignment":0,
       "react/prop-types": 0 
-    } 
+    },
+    "linebreak-style": ["error", "windows"]
 
   }

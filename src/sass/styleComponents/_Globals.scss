@@ -61,3 +61,8 @@ p {
   box-shadow: 0 0 0px 25px white inset;
 }
 
+input:-webkit-autofill {
+    box-shadow: 0 0 0 50px white inset;
+    // -webkit-box-shadow:0 0 0 50px white inset;
+    // -webkit-text-fill-color: pink;
+}

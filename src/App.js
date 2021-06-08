@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/Styles.css';
+import './sass/Styles.css';
 
 import {
   BrowserRouter as Router,
@@ -7,6 +7,8 @@ import {
   Route,
 } from 'react-router-dom';
 import SignIn from './pages/SignIn';
+import Home from './pages/Home';
+import Error from './pages/404';
 
 function App() {
   return (
@@ -14,6 +16,17 @@ function App() {
       <Switch>
         <Route exact path="/">
           <SignIn />
+        </Route>
+        <Route path="/signup">
+          {/* <SignUp /> */}
+        </Route>
+
+        <Route path="/home">
+          <Home />
+        </Route>
+
+        <Route path="/404">
+          <Error />
         </Route>
       </Switch>
     </Router>

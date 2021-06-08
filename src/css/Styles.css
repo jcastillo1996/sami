@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -17,21 +18,30 @@ p {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0px 25px white inset;
+  -webkit-box-shadow: 0 0 0px 25px white inset;
+          box-shadow: 0 0 0px 25px white inset;
 }
 
 .container-login {
   height: 100vh;
-  background: linear-gradient(225deg, #FF3355 18.23%, #C50121 67.19%, #960019 92.19%);
-  transform: matrix(-1, 0, 0, 1, 0, 0);
+  background-color: #1890FF;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+          transform: matrix(-1, 0, 0, 1, 0, 0);
   padding: 226px 202px 232px 290px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container-login .div-logo-form {
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-  align-items: center;
-  justify-content: center;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .div-logo-form .logoLogin {
@@ -58,9 +68,14 @@ p {
 }
 
 .flex_newAccount {
-  margin-top: 22.8px;
+  margin-top: 22.80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -83,6 +98,7 @@ p {
 .container_email {
   margin-top: 52px;
 }
+
 .container_email label {
   margin-bottom: 0;
   top: -10px;
@@ -90,6 +106,7 @@ p {
   z-index: 1;
   color: #FF3355;
 }
+
 .container_email label ::after {
   content: " ";
   background-color: #ffffff;
@@ -100,6 +117,7 @@ p {
   bottom: 0;
   z-index: -1;
 }
+
 .container_email span {
   position: absolute;
   margin-top: -10px;
@@ -107,11 +125,13 @@ p {
   margin-left: 10px;
   background: #ffffff;
 }
+
 .container_email input {
   width: 284px;
   height: 45px;
   border-radius: 10px;
 }
+
 .container_email input :focus {
   outline: 0;
 }
@@ -119,15 +139,18 @@ p {
 .container_password {
   margin-top: 37.35px;
   width: 284px;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
+
 .container_password input {
   width: 284px;
   height: 45px;
   border-radius: 10px;
   outline: 0;
   background: none;
-  box-shadow: 0 0 0px 25px white inset;
+  -webkit-box-shadow: 0 0 0px 25px white inset;
+          box-shadow: 0 0 0px 25px white inset;
 }
 
 .icon-eye {
@@ -149,6 +172,8 @@ p {
 }
 
 .btnToggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 25px;
   margin-top: 10.65px;
@@ -157,6 +182,7 @@ p {
 .forget-password {
   margin-top: 18.75px;
 }
+
 .forget-password a {
   font-size: 12px;
   margin-left: 170px;
@@ -175,10 +201,9 @@ p {
 }
 
 @font-face {
-  font-family: "Raleway";
+  font-family: 'Raleway';
   src: url("../fonts/Raleway-VariableFont_wght.ttf");
   font-weight: 500;
   font-style: normal;
 }
-
 /*# sourceMappingURL=Styles.css.map */

@@ -1,0 +1,254 @@
+.modal-content{
+
+    background-color: transparent;
+    border: 0px;
+}
+
+#first__modal__sunafil{
+  background-color:#FFFFFF;
+    width:763px;
+    height: auto;
+
+    div{
+      #close_modal_sunafil{
+        margin-top: 24.5px;
+        margin-left: 705.5px; 
+        margin-right: 32.5px;
+      }
+    }
+
+    div{
+      #message_thank{
+        font-family: Montserrat;
+        font-style: normal;
+        /* font-weight: 400; */
+        font-size: 16px;
+        line-height: 20px;
+        text-align: justify;
+      
+        /* Primary Blue */
+      
+        color: #0F3041;
+        width: 526px;
+        height: 45px;
+      }
+    }
+    
+    #container_date_sunafil{
+            margin: 35px 104px 25px 104px;
+            padding: 41px 30px 15px 32px;
+            background: #FFFFFF;
+            border: 1px solid #337AB7;
+            box-sizing: border-box;
+            border-radius: 5px;
+            width:555px;
+            height:420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+
+            div{
+              .ruc{
+                background: #005EB8;
+                border-radius: 5px 0px 0px 5px;
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                display: flex;
+                align-items: center;
+                text-align: justify;
+                color: #FFFFFF;
+                width: 56px;
+                height: 34px;
+               justify-content: center;
+               margin-right: 2.5px;
+               margin-bottom: 15px;
+              }
+
+              .dni{
+  
+                background: #E0E0E0;
+                border-radius: 0px 5px 5px 0px;
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                display: flex;
+                align-items: center;
+                text-align: justify;
+                color: #8F8F8F;
+                width: 49px;
+                height: 34px;
+                justify-content: center;
+                margin-left: 2.5px;
+                margin-bottom: 15px;
+                }
+
+            }
+
+            div{
+              #input__modalSunafil{
+                width: 493px;
+                height: 34px;
+                margin-bottom: 15px;
+                box-shadow: 0 0 0px 25px white inset;
+              }
+            }
+
+            
+            div{
+              margin-top:9px;
+              #recordatorio_modal_sunafil{
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 16px;
+                display: flex;
+                align-items: center;
+                text-align: justify;
+                margin-right: 18px;
+
+                /* Primary Blue */
+
+                color: #0F3041;
+                margin-bottom: 29px;
+              }
+
+              #checkSunafil{
+                width:42px; height:18px;  background-size: contain; background-repeat: no-repeat;
+               }  
+            } 
+
+              
+               
+               #link_sunafil{
+                list-style: none;
+                text-decoration: none;
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 14px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #005EB8;
+                margin-bottom:24px;
+              }
+
+              #btn__open__modal__sunafil {
+ 
+                background: #009FDF;
+                border-radius: 5px;
+                Width : 493px;
+                Height: 34px;
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                
+                text-align: center;
+                
+                color: #FFFFFF;
+                
+                
+                }
+          
+    }
+
+    #img__sunafil{
+        margin-bottom:40px ;
+    }
+}
+
+#second__modal__sunafil{
+  width: 763px;
+  height:480px;
+
+  background-color: #FFFFFF;
+
+  div{
+    #close_modal_sunafil{
+        margin-bottom: 44px;
+        margin-left: 705.5px; 
+        margin-right: 32.5px;
+      margin-top: 26px;
+    }
+  }
+
+  div{
+
+    #message_congratulations{
+      width: 373px;
+      height: 48px;
+      left: calc(50% - 373px/2);
+      top: 90px;
+    
+      /* Título */
+    
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+      color: #000000;
+    }
+  } 
+
+  div {
+    #btn_entrar_minimodal_sunafil{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 11px 16px;
+      
+      
+      width: 150px;
+      height: 40px;
+      
+      
+      background: #FFFFFF;
+      /* Primary Red */
+      
+      border: 1px solid #FF3355;
+      box-sizing: border-box;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      
+      /* Primary Red */
+      
+      color: #FF3355;
+      
+      
+      /* Inside Auto Layout */
+      
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin: 0px 10px;
+    }
+  }
+  div{
+    #sunafilImg{
+        margin-top: 33px;
+        margin-bottom: 57px;
+    }
+  }
+}

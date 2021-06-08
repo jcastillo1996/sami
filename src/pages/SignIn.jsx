@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { auth } from '../firebase-controller/firebase';
 import logo from '../images/svg/logo_blanco.svg';
 import group from '../images/svg/group.svg';
 import eye from '../images/svg/eye.svg';
 
 function SignIn() {
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleDescription = (callback, e) => {
+    callback(e);
+  };
+
+  /* * Crear usuario * */
+  // const createUser = (e) => {
+  //   e.preventDefault();
+  //   auth.createUserWithEmailAndPassword(email, password)
+  //     // .then((res) => alert('Usuario Registrado'));
+  //     .then();
+  //   history.push('/home');
+  // };
+
+  /* * Login * */
+  const login = (e) => {
+    e.preventDefault();
+    auth.signInWithEmailAndPassword(email, password)
+      .then();
+    history.push('/home');
+  };
+
   return (
     <div className="container-login d-flex">
       <div className="div-logo-form d-flex">
@@ -11,7 +38,7 @@ function SignIn() {
           <img src={logo} className="logoLogin" alt="logo" />
         </div>
         <div className="form">
-          <form className="form1">
+          <form className="form1" onSubmit={login}>
             <div>
               <img src={group} className="img_group" alt="logo" />
             </div>
@@ -37,6 +64,10 @@ function SignIn() {
                     aria-required="true"
                     aria-invalid="false"
                     required
+                    value={email}
+                    onChange={(e) => {
+                      handleDescription(setEmail, e.target.value);
+                    }}
                   />
                 </label>
                 <br />
@@ -51,6 +82,10 @@ function SignIn() {
                     className="form-control txtPlaceholderGray"
                     name="txtPassword"
                     placeholder="Contraseña"
+                    value={password}
+                    onChange={(e) => {
+                      handleDescription(setPassword, e.target.value);
+                    }}
                   />
                 </label>
                 <button
@@ -68,9 +103,12 @@ function SignIn() {
             </div>
 
             <div className="">
-              <button type="button" id="getIn" className="getIn">
-                <span>Ingresar</span>
-              </button>
+              <input
+                type="submit"
+                id="getIn"
+                className="getIn"
+                value="Ingresar"
+              />
             </div>
           </form>
         </div>

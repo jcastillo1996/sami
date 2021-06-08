@@ -20,6 +20,10 @@ p {
   box-shadow: 0 0 0px 25px white inset;
 }
 
+input:-webkit-autofill {
+  box-shadow: 0 0 0 50px white inset;
+}
+
 .container-login {
   height: 100vh;
   background: linear-gradient(225deg, #FF3355 18.23%, #C50121 67.19%, #960019 92.19%);

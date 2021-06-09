@@ -1,5 +1,6 @@
 import React from 'react';
 import './sass/Styles.css';
+import './css/Styles.css';
 
 import {
   BrowserRouter as Router,
@@ -8,6 +9,7 @@ import {
 } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
+import SignUp from './pages/SignUp';
 import Error from './pages/404';
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
           <SignIn />
         </Route>
         <Route path="/signup">
-          {/* <SignUp /> */}
+          <SignUp />
         </Route>
 
         <Route path="/home">

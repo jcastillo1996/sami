@@ -1,0 +1,39 @@
+.container-newCase {
+  border: 1px solid red;
+}
+
+.container-newCase .dropForm {
+  border: 1px solid blue;
+  min-height: 535px;
+  width: 800px;
+}
+
+.new-case {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  color: $txtForm;
+}
+
+// .newCase-containerItems {
+//   border: 1px solid yellow;
+// }
+
+.newCase-item {
+  // border: 1px solid red;
+  width: 400px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  color: $txtForm;
+  text-decoration: none;
+  border-bottom: 1px solid red;
+
+
+  .newCase-item-active {
+    color: pink;
+    font-size: 50px;
+  }
+}

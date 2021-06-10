@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+// import ReactDOM from 'react-dom';
 import {
-  Form, Button,
+  Form, Button, Modal,
 } from 'react-bootstrap';
 
 // import { useHistory } from 'react-router-dom';
-// import { auth } from '../firebase-controller/firebase';
+import { auth } from '../firebase-controller/firebase';
 // import logo from '../images/svg/logo_blanco.svg';
 // import group from '../images/svg/group.svg';
 import logo from '../images/svg/logoSami.svg';
@@ -16,13 +17,117 @@ import pencil from '../images/Vector@2x.png';
 import trash from '../images/trash-vector.png';
 
 function SignUp() {
-  const [showBusiness, setShowBusiness] = useState(false);
+  // const [showBusiness, setShowBusiness] = useState(false);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleDescription = (callback, e) => {
+    callback(e);
+  };
+
+  /* * Crear usuario * */
+  const createUser = () => {
+    // e.preventDefault();
+    auth.createUserWithEmailAndPassword(email, password)
+      // .then(() => alert('Usuario Registrado'));
+      .then(console.log('crea'));
+  };
 
   const [isVisible, setIsVisible] = useState(true);
 
+  const [color, setColor] = useState('#31CC53');
+  const changeColorBall = () => {
+    setColor('#CAD4E8');
+  };
+
+  const [colorGreen, setColorGreen] = useState('#CAD4E8');
+  const changeColorBallGreen = () => {
+    setColorGreen('#31CC53');
+  };
+
+  const [datos, setDatos] = useState({
+    nombre: '',
+    apellido: '',
+  });
+
+  const handleInputChange = (event) => {
+    event.preventDefault();
+    // console.log(event.target.name)
+    // console.log(event.target.value)
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const sendData = () => {
+    // event.preventDefault();
+    console.log(`enviando datos...${datos.nombre} ${datos.apellido}`);
+    const firstInitial1 = datos.nombre.charAt(0).toUpperCase();
+    const firstInitial2 = datos.apellido.charAt(0).toUpperCase();
+    const initials = firstInitial1 + firstInitial2;
+    console.log(`enviando datos...${initials} `);
+    return initials;
+  };
+
+  const sendFullData = () => {
+    // event.preventDefault();
+    const firstName = datos.nombre.split(' ')[0];
+    const lastName = datos.apellido.split(' ')[0];
+    const fullName = `${firstName} ${lastName}`;
+    return fullName;
+  };
+
+  const sendAllDate = (e) => {
+    e.preventDefault();
+    sendData();
+    sendFullData();
+    createUser();
+  };
+
+  /* Modal */
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const showModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => setIsOpen(false);
+
+  const hideModal = () => {
+    setIsOpen(false);
+  };
+
+  const [input, setValue] = useState('');
+  const [name, setName] = useState('');
+
+  const handleInput = (event) => {
+    setValue(event.target.value);
+  };
+
+  const updateName = () => {
+    setName(input);
+    setValue('');
+  };
+
+  // console.log(updateName());
+
+  const [noVisible, setNoVisible] = useState(false);
+  // const name1 = setName(input).split(' ')[0];
+  // const name2 = setName(input).split(' ')[1];
+  // const fullName = name1 + name2;
+  // return fullName;
+  const onClickCloseModal = () => {
+    closeModal();
+    updateName();
+    setNoVisible(true);
+  };
   const onClick = () => {
+    changeColorBallGreen();
+    changeColorBall();
     setIsVisible(false);
-    setShowBusiness(true);
+    // handleClick();
   };
 
   return (
@@ -39,8 +144,8 @@ function SignUp() {
           </div>
 
           {/* Columna derecha - Formularios */}
-          <div className="FormRegister" id="FormRegister">
-            <Form className="Form2">
+          <form onSubmit={sendAllDate} className="FormRegister" id="FormRegister">
+            <div className="Form2">
               {/* ENCABEZADO */}
               <div className="row">
                 {/* titulo REGISTRATE */}
@@ -67,7 +172,7 @@ function SignUp() {
                       <table>
                         <tr>
                           <td>
-                            <div className="btn_color1" id="btn_step_one">
+                            <div className="btn_color1" style={{ background: color }} id="btn_step_one">
                               1
                             </div>
                           </td>
@@ -85,7 +190,7 @@ function SignUp() {
                       <table>
                         <tr>
                           <td>
-                            <div className="btn_color" id="btn_step_two">
+                            <div className="btn_color" style={{ background: colorGreen }} id="btn_step_two">
                               2
                             </div>
                           </td>
@@ -101,8 +206,8 @@ function SignUp() {
                 </div>
               </div>
               {/* INFormACIÓN DATOS PERSONALES */}
-              <div className="col-12">
-                <div id="container_infoUser" className="container_infoUser" style={{ display: isVisible ? 'block' : 'none' }}>
+              <div className="col-12" style={{ display: isVisible ? 'block' : 'none' }}>
+                <div id="container_infoUser" className="container_infoUser">
                   {/* Inputs */}
                   <div className="container_user1">
                     <div className="textOnInput">
@@ -111,10 +216,13 @@ function SignUp() {
                         <input
                           type="text"
                           name="nombre"
-                          id="fname1"
+                          id="name"
                           className="fname1 form-control"
                           placeholder="Completar"
                           required
+                          // ref={names}
+                          // value={name}
+                          onChange={handleInputChange}
                         />
                       </label>
 
@@ -125,11 +233,12 @@ function SignUp() {
 
                         <input
                           type="text"
-                          name="nombre"
-                          id="fname2"
+                          name="apellido"
+                          id="lastName"
                           className="form-control fname2"
                           placeholder="Completar"
-
+                          // value={lastName}
+                          onChange={handleInputChange}
                         />
                       </label>
 
@@ -148,6 +257,10 @@ function SignUp() {
                           id="email"
                           className="form-control fname1"
                           placeholder="nombre@petroperu.com"
+                          value={email}
+                          onChange={(e) => {
+                            handleDescription(setEmail, e.target.value);
+                          }}
                         />
                       </label>
 
@@ -163,8 +276,12 @@ function SignUp() {
                           type="password"
                           id="password1"
                           className="form-control fname2"
-                          name="txtPassword"
+                          name="password"
                           placeholder="Contraseña"
+                          value={password}
+                          onChange={(e) => {
+                            handleDescription(setPassword, e.target.value);
+                          }}
                         />
                       </label>
 
@@ -200,147 +317,258 @@ function SignUp() {
                   </div>
                 </div>
               </div>
+              {/* Input empresa */}
+              <div className="col-12 " style={{ display: isVisible ? 'none' : 'block' }}>
+                <div id="container_infoEmpresa" className="container_infoEmpresa">
 
+                  <div className="textOnInput2">
+                    <label
+                      htmlFor="emailBusiness"
+                    >
+                      <span>Empresa</span>
+                      <input
+                        type="email"
+                        name="email"
+                        id="emailBusiness"
+                        className="emailBusiness form-control email"
+                        placeholder="Ej. Petroperu"
+                      />
+                    </label>
+
+                    <br />
+                  </div>
+                  {/* txt agrega usuario */}
+                  <div
+                    id="ajuste"
+                    className="ajuste d-flex align-items-center bd-highlight"
+                  >
+                    <p>
+                      {' '}
+                      Agrega un Usuario
+                      {'\u00A0'}
+                    </p>
+                    <img
+                      src={helpCircle}
+                      alt="help circle"
+                    />
+                  </div>
+
+                  {/* Boton agregar que muestra circulos azules */}
+                  <div className="d-flex colum btn_add_circle">
+                    {/* btn + agrega un usuario */}
+                    <button
+                      type="button"
+                      id="btn_New"
+                      className="btn-modal-signup btn btn-primary ms-5"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                      onClick={showModal}
+                    >
+                      <img
+                        src={addNewCircle}
+                        alt="agrega usuario"
+                      />
+                      <p> Nuevo </p>
+                    </button>
+
+                    {/* usuario predeterminado - ALONSO */}
+                    <div
+                      id="div_show_alonso"
+                      className="div_show_alonso"
+                    >
+                      {/* Circulo azul con iniciales */}
+
+                      <div
+                        className="btn-border-showAlonso rounded-circle mt-1"
+                        id="btn_border_showAlonso"
+                      >
+                        <div
+                          id="showAlonso"
+                          className="showAlonso rounded-circle"
+                        >
+                          <p id="initials_names" className="sendData">{sendData()}</p>
+
+                        </div>
+                      </div>
+                      {/* Nombre de predeterminado */}
+
+                      <div
+                        id="full_namesAlonso"
+                        className="sendFullData"
+                      >
+                        {sendFullData()}
+                        ...
+                      </div>
+
+                      {/* Iconos */}
+                      <div id="show_icon_example" className="show_icon_example ">
+                        <div>
+                          <div
+                            className="col col-12 col-lg-6  align-items-center"
+                          >
+                            <img src={pencil} alt="pencil" id="pencil_example" className="pencil_example" />
+                          </div>
+                          <div>
+                            <img src={trash} alt="trash" id="trash_example" className="trash_example" />
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    {/* show data */}
+
+                    <div
+                      id="div_show_alonso"
+                      className="div_show_alonso"
+                      style={{ display: noVisible ? 'block' : 'none' }}
+                    >
+                      {/* Circulo azul con iniciales */}
+
+                      <div
+                        className="btn-border-showAlonso rounded-circle mt-1"
+                        id="btn_border_showAlonso"
+                      >
+                        <div
+                          id="showAlonso"
+                          className="showAlonso rounded-circle"
+                        >
+                          <p id="initials_names" className="sendDataModal">{name}</p>
+
+                        </div>
+                      </div>
+                      {/* Nombre de predeterminado */}
+
+                      <div
+                        id="full_namesAlonso"
+                        className="sendFullData"
+                      >
+
+                        ...
+                      </div>
+
+                      {/* Iconos */}
+                      <div id="show_icon_example" className="show_icon_example ">
+                        <div>
+                          <div
+                            className="col col-12 col-lg-6  align-items-center"
+                          >
+                            <img src={pencil} alt="pencil" id="pencil_example" className="pencil_example" />
+                          </div>
+                          <div>
+                            <img src={trash} alt="trash" id="trash_example" className="trash_example" />
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
               {/* btns del formulario */}
               <div className="btns-Form">
-                <Button id="btn_next" className="btn_next" onClick={onClick}>Siguiente</Button>
-                {showBusiness ? <Business /> : null}
-                {/* <button id="btn_nextWelcome" className="ocultar">Siguiente</button>
-                <button id="btn_behind" className="ocultar">Anterior</button> */}
+                <Button id="btn_next" type="submit" className="btn-signup" onClick={onClick}>Siguiente</Button>
+                {/* {/* <button id="btn_nextWelcome" className="ocultar">Siguiente</button> */}
+                <button id="btn_behind" className="btn-signup" style={{ display: isVisible ? 'none' : 'block' }}>Anterior</button>
               </div>
-            </Form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
       <Footer />
+      {/* modal */}
+      <Modal
+        show={isOpen}
+        onHide={hideModal}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <form>
+          <div className="modales">
+
+            {/* encabezado del modal */}
+            <div className="modal-header">
+              <h5
+                className="modal-title mt-3 ms-5"
+                id="staticBackdropLabel"
+              >
+                Nuevo Colaborador
+              </h5>
+
+              <button
+                type="button"
+                className="btn-closes"
+                closeButton
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                x
+              </button>
+            </div>
+
+            <p
+              className="data-to-complete mt-3 ms-5"
+            >
+              Completa los datos solicitados de un usuario frecuente.
+            </p>
+
+            {/* contenido del modal */}
+            <div
+              className="d-flex align-items-center flex-column justify-content-center "
+            >
+              {/* inputs */}
+              <div className="allTextOnInput3 justify-content-start">
+                {/* input nombre */}
+                <div id="textOnInput3" className="textOnInput3">
+                  <label htmlFor="nombreModal">
+                    <span>Nombre</span>
+                    <input
+                      type="text"
+                      name="nombreModal"
+                      className="form-control"
+                      placeholder="Ej. Juan Perez"
+                      id="nombreModal"
+                      value={input}
+                      onChange={handleInput}
+                    />
+                  </label>
+                </div>
+
+                {/* input correo */}
+                <div id="textOnInput3" className="textOnInput3">
+                  <label htmlFor="camponombre">
+                    <span>Correo</span>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="form-control"
+                      placeholder="Ej. nombre@petroperu.com"
+                    />
+                  </label>
+                </div>
+              </div>
+
+              {/* btn aceptar */}
+              <div className="modal-footer">
+                <Button
+                  type="button"
+                  className="btn btn-secondary btn-danger"
+                  id="add"
+                  onClick={onClickCloseModal}
+                  data-bs-dismiss="modal"
+                >
+                  Agregar
+                </Button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </Modal>
     </>
   );
 }
 
-const Business = () => (
-  <div className="col-12">
-    <Form id="container_infoEmpresa">
-      {/* Input empresa */}
-      <div className="textOnInput2">
-        <label
-          htmlFor="emailBusiness"
-        >
-          <span>Empresa</span>
-          <input
-            type="email"
-            name="email"
-            id="emailBusiness"
-            className="emailBusiness form-control email"
-            placeholder="Ej. Petroperu"
-          />
-        </label>
-
-        <br />
-      </div>
-      {/* txt agrega usuario */}
-      <div
-        id="ajuste"
-        className="ajuste d-flex align-items-center bd-highlight"
-      >
-        <p>
-          {' '}
-          Agrega un Usuario
-          {'\u00A0'}
-        </p>
-        <img
-          src={helpCircle}
-          alt="help circle"
-        />
-      </div>
-
-      {/* Boton agregar que muestra circulos azules */}
-      <div className="d-flex colum btn_add_circle">
-        {/* btn + agrega un usuario */}
-        <button
-          type="button"
-          id="btn_New"
-          className="btn-modal-signup btn btn-primary ms-5"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          <img
-            src={addNewCircle}
-            alt="agrega usuario"
-          />
-          <p> Nuevo </p>
-        </button>
-
-        {/* usuario predeterminado - ALONSO */}
-        <div
-          id="div_show_alonso"
-          className="div_show_alonso"
-        >
-          {/* Circulo azul con iniciales */}
-
-          <div
-            className="btn-border-showAlonso rounded-circle mt-1"
-            id="btn_border_showAlonso"
-          >
-            <div
-              id="showAlonso"
-              className="showAlonso rounded-circle"
-            />
-          </div>
-
-          {/* Nombre de predeterminado */}
-
-          <div
-            id="full_namesAlonso"
-            className="full_namesAlonso"
-          />
-
-          {/* Iconos */}
-          <div id="show_icon_example" className="show_icon_example ">
-            <div>
-              <div
-                className="col col-12 col-lg-6  align-items-center"
-              >
-                <img src={pencil} alt="pencil" id="pencil_example" className="pencil_example" />
-              </div>
-              <div>
-                <img src={trash} alt="trash" id="trash_example" className="trash_example" />
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* show data */}
-
-        <div
-          id="div_Show_Data"
-          className="div_Show_Data"
-        // className="hide"
-        >
-
-          {/* Muestra iniciales */}
-          <div
-            className="btn_border_showNamei mt-1"
-            id="btn_border_showNamei"
-          >
-            <div
-              id="showNamei"
-              className="rounded-circle"
-            >
-              <p />
-            </div>
-          </div>
-
-          {/* Muestra nombre */}
-          <div
-            id="showName"
-            className="showName"
-          >
-            <p />
-          </div>
-        </div>
-      </div>
-    </Form>
-  </div>
-);
 export default SignUp;

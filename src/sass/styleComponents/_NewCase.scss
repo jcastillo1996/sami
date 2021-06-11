@@ -1,9 +1,11 @@
 .container-newCase {
-  border: 1px solid red;
+  // border: 1px solid red;
+  padding-top: 80px;
+  background: $background-primary;
 }
 
 .container-newCase .dropForm {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   min-height: 535px;
   width: 800px;
 }
@@ -16,24 +18,29 @@
   color: $txtForm;
 }
 
-// .newCase-containerItems {
-//   border: 1px solid yellow;
-// }
+.newCase-containerItems {
+  // border: 1px solid yellow;
+  margin-top: 32px;
+}
 
 .newCase-item {
   // border: 1px solid red;
+  height: 37px;
   width: 400px;
   text-align: center;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 19px;
   color: $txtForm;
   text-decoration: none;
-  border-bottom: 1px solid red;
-
-
+  // border-bottom: 1px solid red;
+  background: $background-primary;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid $line-main;
   .newCase-item-active {
-    color: pink;
+    // color: pink;
     font-size: 50px;
   }
 }

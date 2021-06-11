@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { auth } from '../firebase-controller/firebase';
 import logo from '../images/svg/logo_blanco.svg';
 import group from '../images/svg/group.svg';
 import eye from '../images/svg/eye.svg';
+import signIn from '../firebase-controller/auth-controller';
 
 function SignIn() {
   const history = useHistory();
@@ -26,8 +26,7 @@ function SignIn() {
   /* * Login * */
   const login = (e) => {
     e.preventDefault();
-    auth.signInWithEmailAndPassword(email, password)
-      .then();
+    signIn(email, password).then();
     history.push('/home');
   };
 

@@ -557,6 +557,19 @@ p {
   border-radius: 10px;
 }
 
+.welcome {
+  width: 760px;
+  height: 513px;
+  margin-left: 124px;
+  margin-top: 50px;
+  margin-bottom: 227px;
+  /* White */
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
+          box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
+  border-radius: 10px;
+}
+
 .logoSami {
   width: 160px;
   height: 54px;
@@ -1161,6 +1174,517 @@ span {
   background: #FF3355;
   border-radius: 8px;
   color: white;
+}
+
+.registrar {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 30px;
+  color: #0F3041;
+  padding: 50px 0 12px 50px;
+}
+
+.show-message {
+  color: #7D7577;
+  font-size: 14.5px;
+  line-height: 20px;
+  margin: 25px 222px 58px 50px;
+}
+
+.show-message div:nth-child(2) {
+  width: 488px;
+}
+
+.show-message p span {
+  color: #FF4766;
+}
+
+/*añadir inspecció*/
+.añadir_Inspección {
+  float: right;
+  /* margin-right: 78px; */
+  margin: 0 78px 53px 0;
+  border-radius: 10px;
+  background: #FF3355;
+  border-color: #FF3355;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  /* margin-bottom: 58px;
+  margin-right: 70px;
+  margin-top: 100px; */
+}
+
+.hidde {
+  display: none;
+}
+
+.wrapperCases {
+  border: 1px solid pink;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 64px 1fr 81px;
+      grid-template-rows: 64px 1fr 81px;
+  background: var(--background-primary);
+}
+
+.container-general-case {
+  width: 1027px;
+  height: 816px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  margin-top: 66px;
+  margin-left: 352px;
+}
+
+.containerHomeCases {
+  /* border: 1px solid red; */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 66px 61px 39px 77px;
+}
+
+.container-general-case {
+  width: 1027px;
+  height: 816px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  margin-top: 66px;
+  margin-left: 352px;
+}
+
+#nav-several-case {
+  width: 1027px;
+  padding: 26px 45px 32px 34px;
+}
+
+/* #show_card_homeCase{
+    width: 669px;
+} */
+#burger {
+  width: 113.5px;
+}
+
+#listSeveralCase {
+  width: 24px;
+}
+
+.style_MisCasos {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #0F3041;
+}
+
+.style_porEtapa {
+  /* width: 59px;
+    height: 34px; */
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
+  /* display: flex;
+    align-items: center; */
+  letter-spacing: 0.1px;
+  color: #0F3041;
+}
+
+#byStage {
+  width: 73px;
+  margin-right: 26px;
+}
+
+#seeker {
+  margin-right: 26px;
+}
+
+#search_homeCase {
+  position: relative;
+  width: 220px;
+  height: 34px;
+  background: #FFFFFF;
+  border: 1.5px solid #EFF2F9;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#img_search_homeCase {
+  position: absolute;
+  z-index: 1;
+  margin-left: 183px;
+}
+
+#slide {
+  width: 51px;
+  margin-right: 26px;
+}
+
+#numberContainer {
+  width: 23px;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 51, 85, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+  /* display: flex;
+    align-items: center; */
+  color: #0F3041;
+}
+
+#pagination {
+  width: 103px;
+}
+
+.paginationNumber {
+  /* width: 74px; */
+  /* height: 12px; */
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+  /* display: flex;
+    align-items: center; */
+  color: #0F3041;
+}
+
+/*CARDS*/
+#show_allCard_homeCase {
+  padding: 0px 27px 25px 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+  position: relative;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /* margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    margin-left: 30px; */
+}
+
+#container_information_homeCase {
+  width: 307px;
+  height: 156px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  margin: 15px 15px 0px 0px;
+}
+
+#container_information_homeCase:first-child {
+  background: rgba(255, 51, 85, 0.05);
+  border: 0.5px solid #FF3355;
+  margin-left: 322px;
+}
+
+#container_information_homeCase:nth-child(0n+2) {
+  background: rgba(255, 51, 85, 0.05);
+  border: 0.5px solid #FF3355;
+}
+
+#row1_card_homeCase {
+  margin: 10px 12px 4px 10px;
+}
+
+#stage_homeCase {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #969CBA;
+  /* flex: none;
+    order: 0; */
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  /* display: flex;
+    flex-direction: row;*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  padding: 0px 17px;
+  width: 70px;
+  height: 20px;
+  left: 10px;
+  top: 10px;
+  border: 1px solid rgba(150, 156, 186, 0.44);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+#style_card_denomination_homeCase {
+  margin-bottom: 0px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 22px;
+  height: 16px;
+  width: 216px;
+  /* display: flex;
+    align-items: center; */
+  letter-spacing: 0.1px;
+  color: #0F3041;
+}
+
+#style_card_dateStage_homeCase {
+  width: 96px;
+  height: 13px;
+  margin-bottom: 0px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 20px;
+  color: #466EFE;
+}
+
+#row2_card_homeCase {
+  margin: 0px 81px 10px 10px;
+  width: 216px;
+}
+
+#style_title_card_homeCase {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+  /* identical to box height, or 182% */
+  /* display: flex;
+    align-items: center; */
+  color: #0E3141;
+  margin-bottom: 0px;
+  height: 12px;
+}
+
+#style_titleNumber_card_homeCase {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+  color: #0E3141;
+  margin-bottom: 0px;
+  height: 12px;
+  margin-right: 5px;
+}
+
+#style_titleNumber_card_homeCase:first-child {
+  color: #D70025;
+}
+
+#style_titleNumber_card_homeCase:nth-child(0n+2) {
+  color: #D70025;
+}
+
+#style_dateExpirationHomework_card_homeCase {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+  /* identical to box height, or 182% */
+  /* display: flex;
+    align-items: center; */
+  color: #0E3141;
+  margin-bottom: 0px;
+  height: 12px;
+}
+
+#style_dateExpirationHomework_card_homeCase:first-child {
+  color: #D70025;
+}
+
+#style_dateExpirationHomework_card_homeCase:nth-child(0n+2) {
+  color: #D70025;
+}
+
+#style_txt_stage_card_homeCase {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 20px;
+  height: 14px;
+  /* or 222% */
+  /* 
+    display: flex;
+    align-items: center; */
+  color: #969CBA;
+  margin-bottom: 0px;
+}
+
+#kind_stage_card_homeCase {
+  width: 222px;
+}
+
+#row3_card_homeCase {
+  margin: 0px 45px 10px 10px;
+  /* width: 216px; */
+}
+
+#row4_card_homeCase {
+  margin: 0px 0px 10px 10px;
+  /* width: 216px; */
+}
+
+#container1 {
+  width: 95px;
+  margin-right: 25px;
+}
+
+#container2 {
+  width: 88px;
+  margin-right: 25px;
+}
+
+#container3 {
+  width: 57px;
+  margin-right: 25px;
+}
+
+#ball {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #969CBA;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+
+#ball:first-child {
+  background: #D70025;
+}
+
+#ball:nth-child(0n+2) {
+  background: #D70025;
+}
+
+#card_empty {
+  margin-top: 15px;
+  margin-right: 5px;
+  position: absolute;
+  width: 307px;
+  height: 156px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+  margin-left: 31px;
+  padding-top: 20px;
+}
+
+#txt_nuevoCaso {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  color: #BDBDBD;
+  margin-top: 17px;
+}
+
+#date_homeCase {
+  width: 96px;
+  height: 13px;
+  /* left: 10px;
+    top: 13px; */
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 20px;
+  /* or 222% */
+  /* 
+    display: flex;
+    align-items: center; */
+  color: #969CBA;
+}
+
+/* #more_card_empty{
+       
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 100px;
+    line-height: 22px; */
+/* or 22% */
+/*     
+    display: flex;
+    align-items: center;
+    text-align: center; */
+/* letter-spacing: 0.1px;
+    
+    color: #D2D2D2; 
+} */
+#paginations {
+  float: right;
+  margin-right: 45px;
+}
+
+#sidebarCases {
+  /* border: 1px solid gold; */
+  height: 816px;
+  width: 236px;
+  padding: 18px 11px 22px 18px;
+  margin-right: 39px;
+  background: var(--white);
+  font-family: Raleway;
+  background-color: yellow;
 }
 
 @font-face {

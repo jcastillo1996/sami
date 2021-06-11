@@ -8,6 +8,7 @@ import {
   Route,
 } from 'react-router-dom';
 import SignIn from './pages/SignIn';
+import HomeCase from './pages/HomeCase';
 import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import Error from './pages/404';
@@ -21,6 +22,10 @@ function App() {
         </Route>
         <Route path="/signup">
           <SignUp />
+        </Route>
+
+        <Route path="/homecase">
+          <HomeCase />
         </Route>
 
         <Route path="/home">

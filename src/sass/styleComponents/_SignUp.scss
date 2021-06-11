@@ -24,6 +24,20 @@
   border-radius: 10px;
 }
 
+.welcome {
+  width: 760px;
+height: 513px;
+margin-left: 124px;
+margin-top: 50px;
+margin-bottom: 227px;
+
+/* White */
+
+background: #FFFFFF;
+box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
+border-radius: 10px;
+}
+
 .logoSami{
   width: 160px;
     height: 54px;
@@ -594,4 +608,46 @@ mix-blend-mode: normal;
       border-radius: 8px;
       color: white;
     }
+  }
+
+  //bienvenida
+  .registrar{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    color: #0F3041;
+    padding: 50px 0 12px 50px;
+}
+
+.show-message{
+  color:#7D7577;
+  font-size: 14.5px;
+  line-height: 20px;
+  margin:25px 222px 58px 50px;
+  div:nth-child( 2 ){
+    width: 488px;
+  }
+  p span{
+    color:#FF4766;
+  }
+}
+
+/*añadir inspecció*/
+.añadir_Inspección{
+  float: right;
+  /* margin-right: 78px; */
+  margin: 0 78px 53px 0;
+  border-radius: 10px;
+  background: #FF3355;
+  border-color: #FF3355;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  /* margin-bottom: 58px;
+  margin-right: 70px;
+  margin-top: 100px; */
+  
+  };
+
+  .hidde{
+    display: none;
   }

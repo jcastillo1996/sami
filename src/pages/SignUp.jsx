@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 import {
   Form, Button, Modal,
 } from 'react-bootstrap';
-
+import { db } from '../firebase-controller/firebase';
 // import { useHistory } from 'react-router-dom';
-import { auth } from '../firebase-controller/firebase';
+import { signup } from '../firebase-controller/auth.controlle';
+import userCollection from '../firebase-controller/user-controller';
+// import Welcome from '../components/welcome';
 // import logo from '../images/svg/logo_blanco.svg';
 // import group from '../images/svg/group.svg';
 import logo from '../images/svg/logoSami.svg';
@@ -15,24 +17,19 @@ import Footer from '../components/Footer';
 import addNewCircle from '../images/svg/add-new-circle.svg';
 import pencil from '../images/Vector@2x.png';
 import trash from '../images/trash-vector.png';
+import banner from '../images/banner.png';
 
 function SignUp() {
   // const [showBusiness, setShowBusiness] = useState(false);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleDescription = (callback, e) => {
-    callback(e);
-  };
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
   /* * Crear usuario * */
-  const createUser = () => {
-    // e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password)
-      // .then(() => alert('Usuario Registrado'));
-      .then(console.log('crea'));
-  };
+
+  // const handleDescription = (callback, e) => {
+  //   callback(e);
+  // };
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -49,7 +46,16 @@ function SignUp() {
   const [datos, setDatos] = useState({
     nombre: '',
     apellido: '',
+    email: '',
+    password: '',
   });
+
+  const createUser = () => {
+    // e.preventDefault();
+    signup(datos.email, datos.password)
+      // .then(() => alert('Usuario Registrado'));
+      .then(console.log('crea'));
+  };
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -60,6 +66,9 @@ function SignUp() {
       [event.target.name]: event.target.value,
     });
   };
+
+  // const dataUser = () => {
+  // };
 
   const sendData = () => {
     // event.preventDefault();
@@ -79,13 +88,57 @@ function SignUp() {
     return fullName;
   };
 
+  const addOrEditLink = async (linkObject) => {
+    // console.log('datos para enviar a firebase', linkObject);
+    await userCollection(linkObject);
+    console.log('Nuevo caso agregado');
+  };
+  const handleSubmitUser = () => {
+    // e.preventDefault();
+    console.log(datos);
+    // props.addOrEditLink(datos);
+    setDatos({ ...datos });
+    addOrEditLink(datos);
+    console.log('Nuevo caso agregado');
+  };
+
   const sendAllDate = (e) => {
     e.preventDefault();
     sendData();
     sendFullData();
     createUser();
+    handleSubmitUser();
   };
 
+  const [dataUser, setDataUser] = useState([]);
+  const getCollectionUser = async () => {
+    const querySnapshot = await db.collection('user').get();
+    querySnapshot.forEach((doc) => {
+      const docs = [];
+      // querySnapshot.forEach((doc) => {
+      // console.log(doc.data());
+      docs.push({ ...doc.data(), id: doc.id });
+      // });
+      console.log(docs);
+      setDataUser(docs);
+    });
+
+    // db.collection('user').limit(1).onSnapshot((querySnapshot) => {
+    //   const docs = [];
+    //   querySnapshot.forEach((doc) => {
+    //     // console.log(doc.data());
+    //     docs.push({ ...doc.data(), id: doc.id });
+    //   });
+    //   console.log(docs);
+    //   setDataUser(docs);
+    // });
+  };
+
+  const emailFirestore = dataUser.map((e) => e.email);
+  useEffect(() => {
+    getCollectionUser();
+    console.log('datitos');
+  }, []);
   /* Modal */
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -114,6 +167,7 @@ function SignUp() {
   // console.log(updateName());
 
   const [noVisible, setNoVisible] = useState(false);
+  const [noVisibleWelcome, setNoVisibleWelcome] = useState(false);
   // const name1 = setName(input).split(' ')[0];
   // const name2 = setName(input).split(' ')[1];
   // const fullName = name1 + name2;
@@ -123,11 +177,16 @@ function SignUp() {
     updateName();
     setNoVisible(true);
   };
+
   const onClick = () => {
     changeColorBallGreen();
     changeColorBall();
     setIsVisible(false);
     // handleClick();
+  };
+
+  const viuwWelcome = () => {
+    setNoVisibleWelcome(true);
   };
 
   return (
@@ -144,7 +203,7 @@ function SignUp() {
           </div>
 
           {/* Columna derecha - Formularios */}
-          <form onSubmit={sendAllDate} className="FormRegister" id="FormRegister">
+          <form style={{ display: noVisibleWelcome ? 'none' : 'block' }} onSubmit={sendAllDate} className="FormRegister" id="FormRegister">
             <div className="Form2">
               {/* ENCABEZADO */}
               <div className="row">
@@ -257,10 +316,8 @@ function SignUp() {
                           id="email"
                           className="form-control fname1"
                           placeholder="nombre@petroperu.com"
-                          value={email}
-                          onChange={(e) => {
-                            handleDescription(setEmail, e.target.value);
-                          }}
+                          // value={email}
+                          onChange={handleInputChange}
                         />
                       </label>
 
@@ -278,10 +335,8 @@ function SignUp() {
                           className="form-control fname2"
                           name="password"
                           placeholder="Contraseña"
-                          value={password}
-                          onChange={(e) => {
-                            handleDescription(setPassword, e.target.value);
-                          }}
+                          // value={password}
+                          onChange={handleInputChange}
                         />
                       </label>
 
@@ -467,12 +522,54 @@ function SignUp() {
               </div>
               {/* btns del formulario */}
               <div className="btns-Form">
-                <Button id="btn_next" type="submit" className="btn-signup" onClick={onClick}>Siguiente</Button>
-                {/* {/* <button id="btn_nextWelcome" className="ocultar">Siguiente</button> */}
+                <button id="btn_next" type="submit" className="btn-signup" style={{ display: noVisible ? 'none' : 'block' }} onClick={onClick}>Siguiente</button>
                 <button id="btn_behind" className="btn-signup" style={{ display: isVisible ? 'none' : 'block' }}>Anterior</button>
+                <button id="btn_nextWelcome" className="btn-signup" style={{ display: noVisible ? 'block' : 'none' }} onClick={viuwWelcome}>Siguiente</button>
+
               </div>
             </div>
           </form>
+          <div id="welcome" className="welcome" style={{ display: noVisibleWelcome ? 'block' : 'none' }}>
+            <h1 className="registrar">Regístro Completado</h1>
+
+            <img src={banner} id="banner" alt="logo" />
+
+            <div
+              id="show-message"
+              className="show-message"
+            >
+              <div className="d-flex flex-row">
+                <p>
+                  Gracias
+                  {' '}
+                </p>
+
+                {dataUser.map((e) => <p>{e.nombre}</p>)}
+                {' '}
+                <p>
+                  por registrarte
+                </p>
+
+              </div>
+              <div>
+                <p>
+                  Te hemos enviado un mensaje a
+                  {' '}
+                  <span>{emailFirestore}</span>
+                  {' '}
+                  para verificar tu correo
+                </p>
+              </div>
+              <div className="d-flex flex-row">
+                <p>
+                  electrónico, así como las invitaciones a los colaboradores de tu empresa.
+                </p>
+              </div>
+            </div>
+            <button className="añadir_Inspección btn btn-danger" id="añadir_Inspección">
+              Añadir Inspección
+            </button>
+          </div>
         </div>
       </div>
       <Footer />

@@ -45,7 +45,7 @@ function SignIn() {
               <p className="txtgray ">
                 Completa tus credenciales. ¿Aún no tienes una cuenta?
               </p>
-              <a href="#/signUp" id="newAccount" className="ptxtRed">
+              <a href="signUp" id="newAccount" className="ptxtRed">
                 Crea tu cuenta
               </a>
             </div>

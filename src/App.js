@@ -1,4 +1,5 @@
 import React from 'react';
+// import './sass/Styles.css';
 import './css/Styles.css';
 
 import {
@@ -6,10 +7,13 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import Home from './pages/Home';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Home from './pages/Home';
+import HomeCase from './pages/HomeCase';
 import Inspection from './pages/Inspection';
 import Actuation from './pages/Actuation';
+import Error from './pages/404';
 
 function App() {
   return (
@@ -18,14 +22,23 @@ function App() {
         <Route exact path="/">
           <SignIn />
         </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
         <Route exact path="/home">
           <Home />
+        </Route>
+        <Route path="/homecase">
+          <HomeCase />
         </Route>
         <Route exact path="/inspection">
           <Inspection />
         </Route>
         <Route exact path="/actuation">
           <Actuation />
+        </Route>
+        <Route path="/404">
+          <Error />
         </Route>
       </Switch>
     </Router>

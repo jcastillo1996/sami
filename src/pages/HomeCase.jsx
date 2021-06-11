@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -58,7 +57,7 @@ function HomeCase() {
             <div className="d-flex flex-row justify-content-between" id="nav-several-case">
 
               <div id="burger" className="burger d-flex flex-row align-items-sm-center">
-                <img src={list} id="listSeveralCase" className="listSeveralCase" />
+                <img src={list} alt="logo" id="listSeveralCase" className="listSeveralCase" />
                 <p className="style_MisCasos">Mis Casos</p>
               </div>
 
@@ -66,17 +65,17 @@ function HomeCase() {
 
                 <div id="byStage" className="byStage d-flex flex-row justify-content-between align-items-sm-center ">
                   <p className="style_porEtapa">Por Etapa</p>
-                  <img src={down} />
+                  <img src={down} alt="logo" />
                 </div>
 
                 <div id="seeker" className="seeker d-flex flex-row align-items-sm-center">
                   <input type="search" id="search_homeCase" className="search_homeCase" name="searchCase" placeholder="  Buscar caso" />
-                  <img id="img_search_homeCase" className="img_search_homeCase" src={search} />
+                  <img id="img_search_homeCase" alt="logo" className="img_search_homeCase" src={search} />
                 </div>
 
                 <div id="slide" className="slide d-flex flex-row justify-content-between align-items-sm-center ">
-                  <img src={horizontal} />
-                  <img src={vertical} />
+                  <img src={horizontal} alt="logo" />
+                  <img src={vertical} alt="logo" />
                 </div>
 
                 <div id="pagination" className="pagination d-flex flex-row justify-content-between align-items-sm-center">
@@ -90,7 +89,7 @@ function HomeCase() {
 
             <div id="show_card_homeCase">
               <div className="card_empty d-flex flex-column justify-content-center" id="card_empty">
-                <img src={more} />
+                <img src={more} alt="logo" />
                 <p id="txt_nuevoCaso" className="txt_nuevoCaso">Nuevo Caso</p>
               </div>
               <div id="show_allCard_homeCase">
@@ -109,7 +108,7 @@ function HomeCase() {
                         <div id="stage_homeCase" className="stage_homeCase">
                           <strong>Etapa</strong>
                         </div>
-                        <img src={arrow} />
+                        <img src={arrow} alt="logo" />
                       </div>
                     </div>
 

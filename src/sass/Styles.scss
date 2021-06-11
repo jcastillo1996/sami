@@ -1,9 +1,12 @@
 @import "./styleComponents//Globals";
+@import "./styleComponents/Header";
+@import "./styleComponents/Home";
 @import "./styleComponents/SignIn";
 @import "./styleComponents/NewCase";
 @import "./styleComponents/Drop";
 @import "./styleComponents/FormNewCase";
-
+@import "./styleComponents/FormNewActuation";
+@import "./styleComponents/Footer";
 
 
 @font-face {

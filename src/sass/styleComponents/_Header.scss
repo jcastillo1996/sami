@@ -1,0 +1,83 @@
+.header {
+  border-bottom: 1px solid $line-header;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 257px 1fr 325px;
+  background: $background-primary;
+}
+
+.header-left {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-left .logo {
+  height: 26px;
+  width: 77.19px;
+  margin-right: 28px;
+}
+
+.vertical-line {
+  background: $line-header;
+  height: 32px;
+  width: 1px;
+  margin-right: 12px;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.vertical-line-status{
+  background: $line-header;
+  height: 32px;
+  width: 1px;
+  margin-right: 12px;
+  margin-left: 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.header-center {
+  justify-content: space-between;
+}
+
+.header-center .tag-case {
+  border-bottom: 3px solid $secondary-red;
+  width: 106px;
+  height: 100%;
+  align-items: center;
+  margin-left: 193px;
+}
+
+.header-center p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.header-center .search-notification {
+  align-items: center;
+}
+
+.header-center img {
+  margin-right: 14px;
+}
+
+.header-right {
+  align-items: center;
+}
+
+.header-right .avatar{
+  height: 32px;
+  width: 32px;
+  margin-left: 26px;
+}
+
+.header-right p {
+  margin: 0;
+  margin: 0 8px;
+  font-size: 12px;
+}
+
+.header-right img {
+  height: 28px;
+  width: 28px;
+}

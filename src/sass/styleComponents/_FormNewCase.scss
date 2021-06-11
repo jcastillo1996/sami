@@ -1,0 +1,140 @@
+.container-formNewCase {
+  height: 852px;
+  width: 740px;
+  margin: 30px 30px 0 30px;
+  padding: 50px 0 50px 30px;
+  border-radius: 10px;
+  background: $white;
+  border: 1px solid #D2D6E1;
+  font-size: 14px;
+  margin-bottom: 60px;
+}
+
+.form-newCase {
+
+  label {
+    // border: 1px solid pink;
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    width: 210px;
+  }
+
+  input {
+    &::placeholder {
+      font-size: 14px;
+      font-weight: 300;
+      color: $txtPlaceholderGray ;
+    } 
+  }
+}
+
+.div-inputForm {
+  // border: 1px solid red;
+  margin-bottom: 40px;
+}
+
+.input-small {
+  height: 39px;
+  width: 161.54px;
+  border-radius: 10px;
+
+
+}
+
+.input-medium {
+  height: 39px;
+  width: 355.19px;
+  border-radius: 10px;
+}
+
+.div-addInspector {
+  // border: 1px solid blue;
+  width: 100px;
+  margin-left: 460px;
+ 
+  strong {
+    font-size: 22px;
+    margin-right: 5px;
+  }
+
+  span {
+  // font-family: Roboto;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 14px;
+  color: $primary-red;
+  }
+}
+
+.container-checks {
+  input {
+    margin-right: 13px;
+  }
+
+  label {
+    margin-bottom: 26px;
+  }
+}
+
+.checks-group1 {
+  margin-right: 50px;
+}
+
+.divInputForm-denomination {
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+
+.input-denomination {
+  height: 39px;
+  width: 286px;
+  border-radius: 10px;
+}
+
+.btnCreateCase {
+  height: 40px;
+  width: 138px;
+  background: $primary-red;
+  // opacity: 0.3;
+  border: 2px solid $primary-red;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: $white;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.inputDate {
+  font-size: 14px;
+}
+
+// .container-checks {
+//   // border: 1px solid red;
+//   input[type="checkbox"] {
+//     display: none;
+
+//     &:checked + label::before {
+//       border-radius: 50%;
+//     }
+//   }
+
+//   label {
+//     padding-left: 30px;
+//     position: relative;
+
+//       &::before {
+//         content: '';
+//         border: 1px solid $primary-red;
+//         height: 0.9em;
+//         width: 0.9em;
+//         position: absolute;
+//         left: 0px;
+//       }
+//   }
+
+// } 
+

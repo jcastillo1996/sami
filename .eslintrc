@@ -5,6 +5,7 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/button-has-type": ["off",{"button": true}],
       "react/destructuring-assignment":0,
-      "react/prop-types": 0 
+      "react/prop-types": 0,
+      "no-console": "off"
     }
   }

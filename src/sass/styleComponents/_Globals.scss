@@ -27,11 +27,13 @@ $txtPlaceholder :#BDBDBD;
 $txtgreen: #31CC53;
 $borderInputForm:#EEF0F6;
 $txtPlaceholderGray : #B6B2B2; 
+$txtInfoBlueGray : #7B89B2;
 $background-light: #F0F3F5;
 $height-card-materia : 37px;
 $margin-card-materia : 0 0 8px;
 $padding-card-materia : 10px;
 $border-radius-card : 10px;
+$background-drop :#EFF2F9;
   
   
 // == GLOBALES == //
@@ -61,3 +63,16 @@ p {
   box-shadow: 0 0 0px 25px white inset;
 }
 
+input:-webkit-autofill {
+    box-shadow: 0 0 0 50px white inset;
+    // -webkit-box-shadow:0 0 0 50px white inset;
+    // -webkit-text-fill-color: pink;
+}
+
+.hide {
+  display: none;
+}
+
+.txtPlaceholder {
+  color: $txtPlaceholder;
+}

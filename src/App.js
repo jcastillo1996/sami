@@ -6,7 +6,10 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import Home from './pages/Home';
 import SignIn from './pages/SignIn';
+import Inspection from './pages/Inspection';
+import Actuation from './pages/Actuation';
 
 function App() {
   return (
@@ -14,6 +17,15 @@ function App() {
       <Switch>
         <Route exact path="/">
           <SignIn />
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/inspection">
+          <Inspection />
+        </Route>
+        <Route exact path="/actuation">
+          <Actuation />
         </Route>
       </Switch>
     </Router>

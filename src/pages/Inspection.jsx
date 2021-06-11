@@ -1,12 +1,14 @@
 import React from 'react';
+import Header from '../components/Header';
 import NewCase from '../components/NewCase';
+import Footer from '../components/Footer';
 
 function Inspection() {
   return (
     <>
-      <h1>Header</h1>
+      <Header />
       <NewCase />
-      {/* <h1>Footer</h1> */}
+      <Footer />
     </>
   );
 }

@@ -176,13 +176,14 @@ border-radius: 10px;
       }
   }
 
-  span {
+.container__register span {
     position: absolute;
     margin-top: -10px;
     padding: 0 4px;
     margin-left: 10px;
     background: $white;
   }
+  
  .fname1{
     width: 302px;
     height: 45px;

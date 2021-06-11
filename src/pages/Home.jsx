@@ -18,20 +18,21 @@ function Home() {
 
   return (
     <>
-    <Header />
-    <Sunafil />
-    <div className="container-home">
-      <div className="container-btns">
-        <button className="btnCreateCase" onClick={viewInspection}>
-          Crear caso
-        </button>
-        <button className="btnCreateCase" onClick={viewActuation}>
-          <img src={cruzBlanca} alt="mas" />
-          Actuación
-        </button>
+      <Header />
+      <Sunafil />
+      <div className="container-home">
+        <div className="container-btns">
+          <button className="btnCreateCase" onClick={viewInspection}>
+            Crear caso
+          </button>
+          <button className="btnCreateCase" onClick={viewActuation}>
+            <img src={cruzBlanca} alt="mas" />
+            Actuación
+          </button>
+        </div>
       </div>
-    </div>
-     <Footer />
+      <Footer />
+    </>
   );
 }
 

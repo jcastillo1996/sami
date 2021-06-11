@@ -1,0 +1,150 @@
+.sidebarCases {
+  /* border: 1px solid gold; */
+  height: 816px;
+  width: 236px;
+  padding: 18px 11px 22px 18px;
+  margin-right: 39px;
+  background: $white;
+  // font-family: Raleway;
+}
+
+.sidebarCases .sidebar-company p {
+  margin: 20px 0 14px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: $txtBlueLight;
+}
+
+/* .sidebarCases .sidebar-company img {
+
+} */
+
+.sidebarCases .company-pendingTasks {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid $line-sidebar;
+}
+
+.sidebarCases .pendingTasks-header p {
+  font-size: 14px;
+  font-weight: bold;
+  color : $txtBlueLight;
+}
+
+.sidebarCases .pendingTasks-header button {
+  height: 15px;
+  padding: 3px;
+  font-size: 11px;
+  color: $border-blue;
+}
+
+.sidebarCases .pendingTasks-content-card {
+  margin-bottom: 18px;
+  flex-direction: column;
+}
+
+.pendingTasks-content-card .card-fvenci {
+  /* border: 1px solid red; */
+  height: 30px;
+  width: 70px;
+  margin-left: 10px;
+}
+
+.pendingTasks-content-card .card-fvenci p{
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: $primary-blue;
+}
+
+.pendingTasks-content-card .card-fvenci span{
+  font-size: 9px;
+  font-weight: 600;
+  color: $txtBlueLight;
+}
+
+.pendingTasks-content-card  .card-taskName {
+  /* border: 1px solid yellow; */
+  height: 30px;
+  width: 95px;
+}
+
+.pendingTasks-content-card  .card-taskName p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 15px;
+  color: $primary-blue;
+}
+
+.pendingTasks-content-card  .card-taskName .taskName {
+  margin: 0;
+  width: 65px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+
+.sidebarCases .caseProgress {
+  /* margin-top: 20px; */
+  margin-top: 2px;
+  padding-top: 20px;
+  border-top: 1px solid $line-sidebar;
+}
+
+.sidebarCases .caseProgress-header p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: $txtBlueLight;
+}
+
+.sidebarCases .caseProgress-content {
+  margin-top: 21px;
+}
+
+.sidebarCases .caseProgress-content p {
+  margin-left: 28px;
+}
+
+.caseProgress-content .content-items {
+  padding-top: 10px;
+  margin-left: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarCases .caseTeam {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid $line-sidebar;
+}
+
+.sidebarCases .caseTeam p {
+  font-size: 14px;
+  font-weight: bold;
+  color: $txtBlueLight;
+}
+
+.caseTeam .caseTeam-names {
+  margin-top: 14px;
+}
+
+.caseTeam .miniCardTeam {
+  margin-bottom: 23px;
+}
+
+.caseTeam .miniCardTeam p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: $txtForm;
+}
+
+.caseTeam .miniCardTeam img {
+  margin-right: 21px;
+}

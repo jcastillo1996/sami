@@ -128,11 +128,10 @@ input:-webkit-autofill {
 }
 
 .wrapperCases {
-  border: 1px solid pink;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 64px 1fr 81px;
-  background: var(--background-primary);
+  background: #F9FBFC;
 }
 
 .container-general-case {
@@ -142,6 +141,7 @@ input:-webkit-autofill {
   border-radius: 5px;
   margin-top: 66px;
   margin-left: 352px;
+  background: #F9FBFC;
 }
 
 .containerHomeCases {

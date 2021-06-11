@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 // import { addNewCase } from '../firebase-controller/formNewCase-controller';
 
 function FormNewCase(props) {
+  const history = useHistory();
+
   const initialStateValues = {
     inspectionDate: '',
     inspectionOrder: '',
@@ -22,6 +25,10 @@ function FormNewCase(props) {
     console.log(values);
     props.addOrEditLink(values);
     setValues({ ...initialStateValues });
+  };
+
+  const btnCreateCase = () => {
+    history.push('/homecase');
   };
 
   return (
@@ -246,7 +253,7 @@ function FormNewCase(props) {
               value="Crear caso"
               className="btnCreateCase"
             /> */}
-            <button className="btnCreateCase">Crear caso</button>
+            <button className="btnCreateCase" onClick={btnCreateCase}>Crear caso</button>
           </div>
 
           {/* <div className="">

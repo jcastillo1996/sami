@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import {
   Form, Button, Modal,
 } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { db } from '../firebase-controller/firebase';
-// import { useHistory } from 'react-router-dom';
 import { signup } from '../firebase-controller/auth.controlle';
 import userCollection from '../firebase-controller/user-controller';
 // import Welcome from '../components/welcome';
@@ -20,6 +20,7 @@ import trash from '../images/trash-vector.png';
 import banner from '../images/banner.png';
 
 function SignUp() {
+  const history = useHistory();
   // const [showBusiness, setShowBusiness] = useState(false);
 
   // const [email, setEmail] = useState('');
@@ -189,21 +190,26 @@ function SignUp() {
     setNoVisibleWelcome(true);
   };
 
+  const btnAddInspection = () => {
+    history.push('/inspection');
+  };
+
   return (
     <>
       <div id="container__register" className="container__register">
         <div id="div__logo__Form" className="div__logo__form">
           {/* Columna izquierda - Logo */}
           <div className="logoSami">
-            <img
-              src={logo}
-              id=""
-              alt="logo"
-            />
+            <img src={logo} id="" alt="logo" />
           </div>
 
           {/* Columna derecha - Formularios */}
-          <form style={{ display: noVisibleWelcome ? 'none' : 'block' }} onSubmit={sendAllDate} className="FormRegister" id="FormRegister">
+          <form
+            style={{ display: noVisibleWelcome ? 'none' : 'block' }}
+            onSubmit={sendAllDate}
+            className="FormRegister"
+            id="FormRegister"
+          >
             <div className="Form2">
               {/* ENCABEZADO */}
               <div className="row">
@@ -214,13 +220,15 @@ function SignUp() {
 
                 {/* txt Completa los datos  */}
                 <div className="container__txt__tocomplete">
-                  <p
-                    className="txtgray"
-                  >
+                  <p className="txtgray">
                     Completa los datos solicitados. ¿Ya tienes una cuenta?
                     {' '}
                   </p>
-                  <a href="/signin" className="ptxtRed"> Ingresa </a>
+                  <a href="/signin" className="ptxtRed">
+                    {' '}
+                    Ingresa
+                    {' '}
+                  </a>
                 </div>
 
                 {/* Circulos verdes (step) */}
@@ -231,14 +239,16 @@ function SignUp() {
                       <table>
                         <tr>
                           <td>
-                            <div className="btn_color1" style={{ background: color }} id="btn_step_one">
+                            <div
+                              className="btn_color1"
+                              style={{ background: color }}
+                              id="btn_step_one"
+                            >
                               1
                             </div>
                           </td>
                           <td>
-                            <p>
-                              Datos personales
-                            </p>
+                            <p>Datos personales</p>
                           </td>
                         </tr>
                       </table>
@@ -249,14 +259,16 @@ function SignUp() {
                       <table>
                         <tr>
                           <td>
-                            <div className="btn_color" style={{ background: colorGreen }} id="btn_step_two">
+                            <div
+                              className="btn_color"
+                              style={{ background: colorGreen }}
+                              id="btn_step_two"
+                            >
                               2
                             </div>
                           </td>
                           <td>
-                            <p>
-                              Datos empresa
-                            </p>
+                            <p>Datos empresa</p>
                           </td>
                         </tr>
                       </table>
@@ -265,7 +277,10 @@ function SignUp() {
                 </div>
               </div>
               {/* INFormACIÓN DATOS PERSONALES */}
-              <div className="col-12" style={{ display: isVisible ? 'block' : 'none' }}>
+              <div
+                className="col-12"
+                style={{ display: isVisible ? 'block' : 'none' }}
+              >
                 <div id="container_infoUser" className="container_infoUser">
                   {/* Inputs */}
                   <div className="container_user1">
@@ -284,7 +299,6 @@ function SignUp() {
                           onChange={handleInputChange}
                         />
                       </label>
-
                     </div>
                     <div className="textOnInput ">
                       <label htmlFor="camponombre" className="labelName1">
@@ -300,14 +314,11 @@ function SignUp() {
                           onChange={handleInputChange}
                         />
                       </label>
-
                     </div>
                   </div>
                   <div className="container_user1">
                     <div className="textOnInput">
-                      <label
-                        htmlFor="email"
-                      >
+                      <label htmlFor="email">
                         <span>Correo</span>
 
                         <input
@@ -320,13 +331,9 @@ function SignUp() {
                           onChange={handleInputChange}
                         />
                       </label>
-
                     </div>
                     <div className="textOnInput">
-                      <label
-                        htmlFor="password1"
-
-                      >
+                      <label htmlFor="password1">
                         <span className="labelName1">Contraseña</span>
 
                         <input
@@ -340,17 +347,21 @@ function SignUp() {
                         />
                       </label>
 
-                      <img src={eye} id="btn_password" className="img-eye" alt="eye" />
-
+                      <img
+                        src={eye}
+                        id="btn_password"
+                        className="img-eye"
+                        alt="eye"
+                      />
                     </div>
                   </div>
 
                   {/* Terminos y condiciones */}
-                  <div className="conditions col-12 d-flex flex-row" id="terms__Conditions">
-                    <div
-                      className="d-flex flex-row ms-5 mb-3 mx-5"
-                    >
-
+                  <div
+                    className="conditions col-12 d-flex flex-row"
+                    id="terms__Conditions"
+                  >
+                    <div className="d-flex flex-row ms-5 mb-3 mx-5">
                       <Form.Check type="checkbox" />
                       <p>
                         Acepto los
@@ -363,23 +374,24 @@ function SignUp() {
                       </p>
 
                       <p>
-
                         Políticas de Privacidad
                         {'\u00A0'}
                       </p>
-
                     </div>
                   </div>
                 </div>
               </div>
               {/* Input empresa */}
-              <div className="col-12 " style={{ display: isVisible ? 'none' : 'block' }}>
-                <div id="container_infoEmpresa" className="container_infoEmpresa">
-
+              <div
+                className="col-12 "
+                style={{ display: isVisible ? 'none' : 'block' }}
+              >
+                <div
+                  id="container_infoEmpresa"
+                  className="container_infoEmpresa"
+                >
                   <div className="textOnInput2">
-                    <label
-                      htmlFor="emailBusiness"
-                    >
+                    <label htmlFor="emailBusiness">
                       <span>Empresa</span>
                       <input
                         type="email"
@@ -402,10 +414,7 @@ function SignUp() {
                       Agrega un Usuario
                       {'\u00A0'}
                     </p>
-                    <img
-                      src={helpCircle}
-                      alt="help circle"
-                    />
+                    <img src={helpCircle} alt="help circle" />
                   </div>
 
                   {/* Boton agregar que muestra circulos azules */}
@@ -419,18 +428,12 @@ function SignUp() {
                       data-bs-target="#staticBackdrop"
                       onClick={showModal}
                     >
-                      <img
-                        src={addNewCircle}
-                        alt="agrega usuario"
-                      />
+                      <img src={addNewCircle} alt="agrega usuario" />
                       <p> Nuevo </p>
                     </button>
 
                     {/* usuario predeterminado - ALONSO */}
-                    <div
-                      id="div_show_alonso"
-                      className="div_show_alonso"
-                    >
+                    <div id="div_show_alonso" className="div_show_alonso">
                       {/* Circulo azul con iniciales */}
 
                       <div
@@ -441,34 +444,42 @@ function SignUp() {
                           id="showAlonso"
                           className="showAlonso rounded-circle"
                         >
-                          <p id="initials_names" className="sendData">{sendData()}</p>
-
+                          <p id="initials_names" className="sendData">
+                            {sendData()}
+                          </p>
                         </div>
                       </div>
                       {/* Nombre de predeterminado */}
 
-                      <div
-                        id="full_namesAlonso"
-                        className="sendFullData"
-                      >
+                      <div id="full_namesAlonso" className="sendFullData">
                         {sendFullData()}
                         ...
                       </div>
 
                       {/* Iconos */}
-                      <div id="show_icon_example" className="show_icon_example ">
+                      <div
+                        id="show_icon_example"
+                        className="show_icon_example "
+                      >
                         <div>
-                          <div
-                            className="col col-12 col-lg-6  align-items-center"
-                          >
-                            <img src={pencil} alt="pencil" id="pencil_example" className="pencil_example" />
+                          <div className="col col-12 col-lg-6  align-items-center">
+                            <img
+                              src={pencil}
+                              alt="pencil"
+                              id="pencil_example"
+                              className="pencil_example"
+                            />
                           </div>
                           <div>
-                            <img src={trash} alt="trash" id="trash_example" className="trash_example" />
+                            <img
+                              src={trash}
+                              alt="trash"
+                              id="trash_example"
+                              className="trash_example"
+                            />
                           </div>
                         </div>
                       </div>
-
                     </div>
 
                     {/* show data */}
@@ -488,68 +499,91 @@ function SignUp() {
                           id="showAlonso"
                           className="showAlonso rounded-circle"
                         >
-                          <p id="initials_names" className="sendDataModal">{name}</p>
-
+                          <p id="initials_names" className="sendDataModal">
+                            {name}
+                          </p>
                         </div>
                       </div>
                       {/* Nombre de predeterminado */}
 
-                      <div
-                        id="full_namesAlonso"
-                        className="sendFullData"
-                      >
-
+                      <div id="full_namesAlonso" className="sendFullData">
                         ...
                       </div>
 
                       {/* Iconos */}
-                      <div id="show_icon_example" className="show_icon_example ">
+                      <div
+                        id="show_icon_example"
+                        className="show_icon_example "
+                      >
                         <div>
-                          <div
-                            className="col col-12 col-lg-6  align-items-center"
-                          >
-                            <img src={pencil} alt="pencil" id="pencil_example" className="pencil_example" />
+                          <div className="col col-12 col-lg-6  align-items-center">
+                            <img
+                              src={pencil}
+                              alt="pencil"
+                              id="pencil_example"
+                              className="pencil_example"
+                            />
                           </div>
                           <div>
-                            <img src={trash} alt="trash" id="trash_example" className="trash_example" />
+                            <img
+                              src={trash}
+                              alt="trash"
+                              id="trash_example"
+                              className="trash_example"
+                            />
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
               </div>
               {/* btns del formulario */}
               <div className="btns-Form">
-                <button id="btn_next" type="submit" className="btn-signup" style={{ display: noVisible ? 'none' : 'block' }} onClick={onClick}>Siguiente</button>
-                <button id="btn_behind" className="btn-signup" style={{ display: isVisible ? 'none' : 'block' }}>Anterior</button>
-                <button id="btn_nextWelcome" className="btn-signup" style={{ display: noVisible ? 'block' : 'none' }} onClick={viuwWelcome}>Siguiente</button>
-
+                <button
+                  id="btn_next"
+                  type="submit"
+                  className="btn-signup"
+                  style={{ display: noVisible ? 'none' : 'block' }}
+                  onClick={onClick}
+                >
+                  Siguiente
+                </button>
+                <button
+                  id="btn_behind"
+                  className="btn-signup"
+                  style={{ display: isVisible ? 'none' : 'block' }}
+                >
+                  Anterior
+                </button>
+                <button
+                  id="btn_nextWelcome"
+                  className="btn-signup"
+                  style={{ display: noVisible ? 'block' : 'none' }}
+                  onClick={viuwWelcome}
+                >
+                  Siguiente
+                </button>
               </div>
             </div>
           </form>
-          <div id="welcome" className="welcome" style={{ display: noVisibleWelcome ? 'block' : 'none' }}>
+          <div
+            id="welcome"
+            className="welcome"
+            style={{ display: noVisibleWelcome ? 'block' : 'none' }}
+          >
             <h1 className="registrar">Regístro Completado</h1>
 
             <img src={banner} id="banner" alt="logo" />
 
-            <div
-              id="show-message"
-              className="show-message"
-            >
+            <div id="show-message" className="show-message">
               <div className="d-flex flex-row">
-                <p>
-                  Gracias
-                  {' '}
-                </p>
-
-                {dataUser.map((e) => <p>{e.nombre}</p>)}
+                <p>Gracias </p>
+                {dataUser.map((e) => (
+                  <p>{e.nombre}</p>
+                ))}
                 {' '}
-                <p>
-                  por registrarte
-                </p>
-
+                <p>por registrarte</p>
               </div>
               <div>
                 <p>
@@ -562,11 +596,16 @@ function SignUp() {
               </div>
               <div className="d-flex flex-row">
                 <p>
-                  electrónico, así como las invitaciones a los colaboradores de tu empresa.
+                  electrónico, así como las invitaciones a los colaboradores de
+                  tu empresa.
                 </p>
               </div>
             </div>
-            <button className="añadir_Inspección btn btn-danger" id="añadir_Inspección">
+            <button
+              className="añadir_Inspección btn btn-danger"
+              id="añadir_Inspección"
+              onClick={btnAddInspection}
+            >
               Añadir Inspección
             </button>
           </div>
@@ -583,13 +622,9 @@ function SignUp() {
       >
         <form>
           <div className="modales">
-
             {/* encabezado del modal */}
             <div className="modal-header">
-              <h5
-                className="modal-title mt-3 ms-5"
-                id="staticBackdropLabel"
-              >
+              <h5 className="modal-title mt-3 ms-5" id="staticBackdropLabel">
                 Nuevo Colaborador
               </h5>
 
@@ -604,16 +639,12 @@ function SignUp() {
               </button>
             </div>
 
-            <p
-              className="data-to-complete mt-3 ms-5"
-            >
+            <p className="data-to-complete mt-3 ms-5">
               Completa los datos solicitados de un usuario frecuente.
             </p>
 
             {/* contenido del modal */}
-            <div
-              className="d-flex align-items-center flex-column justify-content-center "
-            >
+            <div className="d-flex align-items-center flex-column justify-content-center ">
               {/* inputs */}
               <div className="allTextOnInput3 justify-content-start">
                 {/* input nombre */}
@@ -660,7 +691,6 @@ function SignUp() {
                 </Button>
               </div>
             </div>
-
           </div>
         </form>
       </Modal>

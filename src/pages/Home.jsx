@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Sunafil from '../components/Sunafil';
 import cruzBlanca from '../images/svg/+_blanco.svg';
 
 function Home() {
@@ -15,8 +17,10 @@ function Home() {
   };
 
   return (
+    <>
+    <Header />
+    <Sunafil />
     <div className="container-home">
-      <Header />
       <div className="container-btns">
         <button className="btnCreateCase" onClick={viewInspection}>
           Crear caso
@@ -27,6 +31,7 @@ function Home() {
         </button>
       </div>
     </div>
+     <Footer />
   );
 }
 

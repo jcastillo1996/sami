@@ -28,7 +28,7 @@ function FormNewCase(props) {
   };
 
   const btnCreateCase = () => {
-    history.push('/homecase');
+    history.push('/homecases');
   };
 
   return (

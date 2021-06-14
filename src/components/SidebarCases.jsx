@@ -1,13 +1,23 @@
 import React from 'react';
+import sunafilRoja from '../images/sunafil-casilla-roja.png';
+import logoSaga from '../images/saga.png';
+import bntRight from '../images/svg/btn-right.svg';
+import circleProgress from '../images/svg/circle-progress.svg';
+import circuloAzul from '../images/svg/circulo-azul.svg';
+import circuloVerde from '../images/svg/circulo-verde.svg';
+import circuloRojoItem from '../images/svg/circulo-rojoItem.svg';
+import avatar1 from '../images/svg/avatar1.svg';
+import avatar2 from '../images/svg/avatar2.svg';
+import avatar3 from '../images/svg/avatar3.svg';
 
 function SidebarCases() {
   return (
     <div className="sidebarCases">
-      <img src="./img/sunafil-casilla-roja.png" alt="logo sunafil" />
+      <img src={sunafilRoja} alt="logo sunafil" />
 
       <div className="sidebar-company">
         <p>Empresa</p>
-        <img src="./img/saga.png" alt="logo empresa" />
+        <img src={logoSaga} alt="logo empresa" />
       </div>
 
       <div className="company-pendingTasks">
@@ -26,26 +36,23 @@ function SidebarCases() {
       <div className="caseProgress">
         <div className="caseProgress-header d-flex justify-content-between">
           <p>Progreso de casos</p>
-          <img src="./img/svg/btn-right.svg" alt="botón siguiente" />
+          <img src={bntRight} alt="botón siguiente" />
         </div>
         <div className="caseProgress-content d-flex">
-          <img src="./img/svg/circle-progress.svg" alt="circulo progreso" />
+          <img src={circleProgress} alt="circulo progreso" />
           <div className="content-items">
-            <img
-              src="./img/svg/circulo-azul.svg"
-              alt="En proceso"
-              // style="margin-top:5px;"
-            />
-            <img
-              src="./img/svg/circulo-verde.svg"
-              alt="En proceso"
-              // style="margin-top:10px;"
-            />
-            <img
-              src="./img/svg/circulo-rojoItem.svg"
-              alt="En proceso"
-              // style="margin-top:10px;"
-            />
+            <div className="item-progress d-flex">
+              <img src={circuloAzul} alt="En proceso" />
+              <p>En proceso (2)</p>
+            </div>
+            <div className="item-progress d-flex">
+              <img src={circuloVerde} alt="En proceso" />
+              <p>Finalizado (1)</p>
+            </div>
+            <div className="item-progress d-flex">
+              <img src={circuloRojoItem} alt="En proceso" />
+              <p>Vencidos (0)</p>
+            </div>
           </div>
         </div>
       </div>
@@ -54,15 +61,15 @@ function SidebarCases() {
         <p>Equipo</p>
         <div className="caseTeam-names">
           <div className="miniCardTeam d-flex align-items-center">
-            <img src="./img/svg/avatar1.svg" alt="foto perfil" />
+            <img src={avatar1} alt="foto perfil" />
             <p>Sofia Jimenez</p>
           </div>
           <div className="miniCardTeam d-flex align-items-center">
-            <img src="./img/svg/avatar2.svg" alt="foto perfil" />
+            <img src={avatar2} alt="foto perfil" />
             <p>Mario Gonzales</p>
           </div>
           <div className="miniCardTeam d-flex align-items-center">
-            <img src="./img/svg/avatar3.svg" alt="foto perfil" />
+            <img src={avatar3} alt="foto perfil" />
             <p>Alonso Aguirre</p>
           </div>
         </div>

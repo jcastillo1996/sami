@@ -134,6 +134,12 @@ input:-webkit-autofill {
   background: #F9FBFC;
 }
 
+.mainCases {
+  height: 816px;
+  width: 100%;
+  background: var(--white);
+}
+
 .container-general-case {
   width: 1027px;
   height: 816px;
@@ -556,6 +562,166 @@ input:-webkit-autofill {
   background: var(--white);
   font-family: Raleway;
   background-color: yellow;
+}
+
+.sidebarCases {
+  /* border: 1px solid gold; */
+  height: 816px;
+  width: 236px;
+  padding: 18px 11px 22px 18px;
+  margin-right: 39px;
+  background: #ffffff;
+}
+
+.sidebarCases .sidebar-company p {
+  margin: 20px 0 14px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #969CBA;
+}
+
+/* .sidebarCases .sidebar-company img {
+
+} */
+.sidebarCases .company-pendingTasks {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #BDBDBD;
+}
+
+.sidebarCases .pendingTasks-header p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #969CBA;
+}
+
+.sidebarCases .pendingTasks-header button {
+  height: 15px;
+  padding: 3px;
+  font-size: 11px;
+  color: #466EFE;
+  background: #ffffff;
+  border: none;
+}
+
+.sidebarCases .pendingTasks-content-card {
+  margin-bottom: 18px;
+  flex-direction: column;
+}
+
+.pendingTasks-content-card .card-fvenci {
+  /* border: 1px solid red; */
+  height: 30px;
+  width: 70px;
+  margin-left: 10px;
+}
+
+.pendingTasks-content-card .card-fvenci p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0F3041;
+}
+
+.pendingTasks-content-card .card-fvenci span {
+  font-size: 9px;
+  font-weight: 600;
+  color: #969CBA;
+}
+
+.pendingTasks-content-card .card-taskName {
+  /* border: 1px solid yellow; */
+  height: 30px;
+  width: 95px;
+}
+
+.pendingTasks-content-card .card-taskName p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 15px;
+  color: #0F3041;
+}
+
+.pendingTasks-content-card .card-taskName .taskName {
+  margin: 0;
+  width: 65px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.sidebarCases .caseProgress {
+  /* margin-top: 20px; */
+  margin-top: 2px;
+  padding-top: 20px;
+  border-top: 1px solid #BDBDBD;
+}
+
+.sidebarCases .caseProgress-header p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #969CBA;
+}
+
+.sidebarCases .caseProgress-content {
+  margin-top: 21px;
+}
+
+.sidebarCases .caseProgress-content p {
+  margin-left: 28px;
+}
+
+.caseProgress-content .content-items {
+  padding-top: 10px;
+  margin-left: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-items .item-progress {
+  height: 18.89px;
+  margin-bottom: 6.5px;
+}
+.content-items .item-progress p {
+  font-size: 11px;
+  color: #0E3141;
+  margin-left: 5px;
+}
+
+.sidebarCases .caseTeam {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #BDBDBD;
+}
+
+.sidebarCases .caseTeam p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #969CBA;
+}
+
+.caseTeam .caseTeam-names {
+  margin-top: 14px;
+}
+
+.caseTeam .miniCardTeam {
+  margin-bottom: 23px;
+}
+
+.caseTeam .miniCardTeam p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #0E3141;
+}
+
+.caseTeam .miniCardTeam img {
+  margin-right: 21px;
 }
 
 .container-login {

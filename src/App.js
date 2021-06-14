@@ -10,7 +10,7 @@ import {
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
-import HomeCase from './pages/HomeCase';
+import HomeCases from './pages/HomeCases';
 import Inspection from './pages/Inspection';
 import Actuation from './pages/Actuation';
 import Error from './pages/404';
@@ -28,8 +28,8 @@ function App() {
         <Route exact path="/home">
           <Home />
         </Route>
-        <Route path="/homecase">
-          <HomeCase />
+        <Route path="/homecases">
+          <HomeCases />
         </Route>
         <Route exact path="/inspection">
           <Inspection />

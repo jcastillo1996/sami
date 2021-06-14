@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+// import { auth } from '../firebase-controller/firebase';
+import { signIn } from '../firebase-controller/auth-controller';
 import logo from '../images/svg/logo_blanco.svg';
 import group from '../images/svg/group.svg';
 import eye from '../images/svg/eye.svg';
-import signIn from '../firebase-controller/auth-controller';
+// import signIn from '../firebase-controller/auth-controller';
 
 function SignIn() {
   const history = useHistory();
@@ -14,11 +16,11 @@ function SignIn() {
     callback(e);
   };
 
-  /* * Crear usuario * */
+  // /* * Crear usuario * */
   // const createUser = (e) => {
   //   e.preventDefault();
   //   auth.createUserWithEmailAndPassword(email, password)
-  //     // .then((res) => alert('Usuario Registrado'));
+  //     // .then((res) => alert('Usuario Registrado', res));
   //     .then();
   //   history.push('/home');
   // };
@@ -45,9 +47,12 @@ function SignIn() {
               <p className="txtgray ">
                 Completa tus credenciales. ¿Aún no tienes una cuenta?
               </p>
-              <a href="signUp" id="newAccount" className="ptxtRed">
+              {/* <a href="signUp" id="newAccount" className="ptxtRed">
                 Crea tu cuenta
-              </a>
+              </a> */}
+              <Link to="/signUp" id="newAccount" className="ptxtRed">
+                Crea tu cuenta
+              </Link>
             </div>
 
             <div className="">

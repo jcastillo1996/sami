@@ -36,6 +36,8 @@
   padding: 3px;
   font-size: 11px;
   color: $border-blue;
+  background: $white;
+  border: none;
 }
 
 .sidebarCases .pendingTasks-content-card {
@@ -116,6 +118,17 @@
   margin-left: 28px;
   display: flex;
   flex-direction: column;
+}
+
+.content-items .item-progress {
+// border: 1px solid red;
+height: 18.89px;
+margin-bottom: 6.5px;
+  p {
+    font-size: 11px;
+    color : $txtForm; 
+    margin-left: 5px;
+  }
 }
 
 .sidebarCases .caseTeam {

@@ -55,7 +55,16 @@ function SignUp() {
     // e.preventDefault();
     signup(datos.email, datos.password)
       // .then(() => alert('Usuario Registrado'));
-      .then(console.log('crea'));
+      // .then(console.log('crea'));
+      .then((resp) => {
+        console.log('resp ->', resp);
+        /* enviar datos de usuario a firestore */
+        db.collection('users').doc(resp.uid).set({
+          nombre: datos.nombre,
+          apellido: datos.apellido,
+          email: datos.email,
+        });
+      });
   };
 
   const handleInputChange = (event) => {

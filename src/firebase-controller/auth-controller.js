@@ -1,6 +1,16 @@
+/* eslint-disable max-len */
 import { auth } from './firebase';
 
 /* Iniciar sesión con correo y contraseña */
-const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
+export const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
 
-export default signIn;
+/* Verificación de email */
+export const verificationEmail = () => auth.currentUser.sendEmailVerification();
+
+/* Usuario loggeado */
+export const user = () => auth.currentUser;
+
+/* Cerrar sesión */
+export const signOut = () => auth.signOut();
+
+// export default signIn;

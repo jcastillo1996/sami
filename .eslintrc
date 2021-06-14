@@ -25,6 +25,7 @@
     ],
     "react/destructuring-assignment": 0,
     "react/prop-types": 0,
-    "no-console": "off"
+    "no-console": "off",
+    "linebreak-style": 0
   }
 }

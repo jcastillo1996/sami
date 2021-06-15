@@ -14,6 +14,7 @@ import HomeCases from './pages/HomeCases';
 import Inspection from './pages/Inspection';
 import Actuation from './pages/Actuation';
 import Error from './pages/404';
+import ReportCase from './pages/ReportCase';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/home">
           <Home />
+        </Route>
+        <Route path="/reportCase">
+          <ReportCase />
         </Route>
         <Route path="/homecases">
           <HomeCases />
